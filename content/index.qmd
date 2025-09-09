@@ -1,6 +1,6 @@
 ---
-title: "Title of the course"
-subtitle: "A subtitle"
+title: "Applied Data Science"
+subtitle: "B.A. International Management - Fall Semester 2025/26"
 format: html
 ---
 
@@ -18,12 +18,11 @@ format: html
 
 # 📍 Lecture
 
-- Mondays 13:00-14:30 in MAD (room TBD)
-- Fridays 11:00-12:30 in MAD (room TBD; biweekly, see seminar timetable)
+- Mondays 09:00-12:00 in MAD (room 225)
 
 Please make sure to check out the most recent version of the seminar timetable 
 since lecture dates might differ from one week to another. 
-The most recent version can be found [in Moodle]().
+The most recent version can be found [here](/content/material/SeminarDescription.qmd).
 
 # 💻 Exercises
 
@@ -34,19 +33,14 @@ Are there exercises?
 You find an overview about all lecture materials, such as slides and
 reading lists [here](/content/material/).
 
-EUF students can
-register for the Moodle course
-[TBD]() 
-using the password `Bla`.
-
 # 📖 Tutorials
 
-Complementary to the lectures there are also short tutorials, 
+Complementary to the lectures there are also short [tutorials](/content/tutorials.qmd). 
 
 
 # 💌 Contact and discussion
 
-For asking questions and starting discussions, please use the forum in Moodle.
+For asking questions and starting discussions, please use the forum in [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=16255).
 
 <!---
 # 💻 Class Groups

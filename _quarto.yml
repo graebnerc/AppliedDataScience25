@@ -1,6 +1,6 @@
 project:
   type: "website"
-  title: "Name of the course (Fall 2025)"
+  title: "Applied Data Science (Fall 2025)"
   output-dir: _site
   render: # Add here all folders that should be rendered
     - "index.qmd"
@@ -9,9 +9,11 @@ project:
     - "content/material/session*/*.qmd"
     - "content/statrecap/*.qmd"
     - "content/statrecap/*/*.qmd"
+    - "content/tutorials/*.qmd"
+    - "content/tutorials/*/*.qmd"
 
 website:
-  title: "The course" # Title of website shown on top left
+  title: "Applied Data Science" # Title of website shown on top left
   page-navigation: true
   reader-mode: true
   open-graph: true
@@ -32,10 +34,12 @@ website:
            text: Overview
          - href: content/material/SeminarDescription.qmd
            text: Seminar Description
-         - href: content/material/session00.qmd
-           text: Session 00
+         - href: content/material/session01.qmd
+           text: Session 01
+      - href: content/tutorials.qmd
+        text: "💻 Tutorials"
       - href: content/statrecap.qmd
-        text: "💻 Name of blog based content"
+        text: "💻 Statistics recap"
 
   navbar:
     background: primary

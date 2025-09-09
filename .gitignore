@@ -1,7 +1,7 @@
 .vscode/
 /.quarto/
+content/tutorials/unused
 
-_site/
 _freeze/
 .Rproj.user/
 renv/

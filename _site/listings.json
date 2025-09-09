@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/content/statrecap.html",
+    "items": [
+      "/content/statrecap/ConceptualFoundations/index.html"
+    ]
+  },
+  {
+    "listing": "/content/tutorials.html",
+    "items": [
+      "/content/tutorials/first-steps/index.html",
+      "/content/tutorials/installation/index.html",
+      "/content/tutorials/installing-packages/index.html",
+      "/content/tutorials/using-exercises/index.html",
+      "/content/tutorials/tutorials.html"
+    ]
+  },
+  {
+    "listing": "/content/tutorials/tutorials.html",
+    "items": []
+  }
+]

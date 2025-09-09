@@ -1,0 +1,402 @@
+[
+  {
+    "objectID": "content/tutorials/using-exercises/index.html",
+    "href": "content/tutorials/using-exercises/index.html",
+    "title": "Using the exercise package",
+    "section": "",
+    "text": "When learning a programming language, applying the new concepts regularly is absolutely essential. Without regular practice it is hard to impossible to remember everything you need to actually enjoy working with R.\nTherefore, I prepared a small set of exercises for each session that I recommend you to do after the session. This will help you to remember what you have learned and to find out what you did not understand well. I then urge you to post your problems on Moodle, to ask your colleagues and to help each other out. This will be a great boost to your learning progress: explaining something to others is not only great in a normative sense, it also helps you to get a deeper understanding of the concepts yourself.\nIn this short post I quickly explain how you can use the exercises that I have prepared for you. For those of you interested in the underlying mechanics: all exercises were prepared using the package learnr together with the gradethis package, and are distributed in the package DataScienceExercises.\nTo use the exercises you must have installed the packages learnr, gradethis and DataScienceExercises. If you followed the instructions in the tutorial on installing R packages this should be the case. If for some reasons you need to install them, you can do this via:\n\n\nShow R code\npack_names &lt;- c(\n  \"rstudio/learnr\",\n  \"rstudio/gradethis\",\n  \"graebnerc/DataScienceExercises\"\n)\nremotes::install_github(\n  repo = pack_names, upgrade = \"always\")\n\n\nNote that this requires a previous installation of the package remotes:\n\n\nShow R code\ninstall.packages(\"remotes\")\n\n\nSince I update the exercises according to your feedback, and add new exercises over the semester, I strongly recommend you to update the package DataScienceExercises each time before you start practicing. To do so you need an internet connection. If you just want to do the exercises without updating the package, an internet connection is not required: the exercises themselves also work offline.\nTo update the package, simply type the following into the console and press Enter:\n\n\nShow R code\nremotes::install_github(\n  repo = \"graebnerc/DataScienceExercises\", upgrade = \"always\")\n\n\nThis should update your package version to the most recent release.\nIf you want to start an exercise you first need to figure out the name of the exercise sheet. This is provided in the Material section of the course webpage. Then you call execute the following code via the console in R Studio, replacing ‘EX_NAME’ with the name of the exercise sheet:\n\n\nShow R code\nlearnr::run_tutorial(\n  name = \"EX_NAME\", \n  package = \"DataScienceExercises\", \n  shiny_args=list(\"launch.browser\"=TRUE))\n\n\nThe first exercise sheet, for instance, is called Basics. Thus, to call it execute the following:\n\n\nShow R code\nlearnr::run_tutorial(\n  name = \"Basics\", \n  package = \"DataScienceExercises\", \n  shiny_args=list(\"launch.browser\"=TRUE))\n\n\nLastly, if you encounter a bug or a mistake, or have an idea for a good exercise, please let me know via the issue tracker of the DataScienceExercises package or via Moodle. Thank you!"
+  },
+  {
+    "objectID": "content/tutorials/installing-packages/index.html",
+    "href": "content/tutorials/installing-packages/index.html",
+    "title": "Installing R packages",
+    "section": "",
+    "text": "After installing R and R-Studio, you still need to install a number of so called R packages. We will learn more about what packages are and how to use them later. Nevertheless, I strongly recommend you to install already all the packages you will need over the following semester already now. This way you make sure that everything is working now, and you save yourself from trouble during the semester. Moreover, installing these packages is necessary to do the exercises provided after each session.\nTo install packages, a stable internet connection is required. Then, proceed as follows:\n\nDownload the script install_packages_script.R and save it in a directory of your choice\nOpen the file install_packages_script.R in R-Studio. To this end, right-click on the file and select Open with, and then choose R-Studio.\nAdjust the first line of the script to the OS you are using. For instance, when you are using a Mac the file should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSelect lines 1-52 and click on the button Run (the screenshot only shows the lines 42-52, the previous lines are also selected):\n\n\n\n\n\n\n\n\n\n\n\nCheck if the package here was installed. You will get the respective message in the console:\n\n\n\n\n\n\n\n\n\n\nIf you encounter any problems, please make a screenshot and post it in the Moodle forum.\n\nSelect the rest of the scrip and run it as you did with the first lines. If you get the following message everything worked well and all packages were installed successfully:\n\n\n\n\n\n\n\n\n\n\nIf not, please post the file InstallationLog.txt and a screenshot with an error into the Moodle forum.\nNote: maybe you will see the following message during the installation process (possible multiple times):\n\n\n\n\n\n\n\n\n\nI recommend to type No and press enter. If, for any reason, the installation process is not successful you might run the installation commands again and try responding with Yes, this might sometimes fix the problem."
+  },
+  {
+    "objectID": "content/tutorials/installing-packages/index.html#a-common-problem-when-installing-tinytex-on-a-mac",
+    "href": "content/tutorials/installing-packages/index.html#a-common-problem-when-installing-tinytex-on-a-mac",
+    "title": "Installing R packages",
+    "section": "A common problem when installing tinytex on a Mac",
+    "text": "A common problem when installing tinytex on a Mac\nThe following hints should be helpful if after the attempted installation of tinytex you see either one of these error messages:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn this case, execute the following comment in your R console within R-Studio:\n\n\nShow R code\ntinytex::install_tinytex(force = TRUE)\n\n\nThen close R-Studio and restart your computer. If test_pdf.qmd still cannot be compiled after this, please open your Mac Terminal (via the app Terminal) and enter the following commands:\nsudo chown -R `whoami`:admin /usr/local/bin\n\n~/Library/TinyTeX/bin/x86_64-darwin/tlmgr path add\nThen install tinytex again as described above, restart your computer, and try to compile test_pdf.qmd again."
+  },
+  {
+    "objectID": "content/tutorials/first-steps/index.html",
+    "href": "content/tutorials/first-steps/index.html",
+    "title": "First steps in R",
+    "section": "",
+    "text": "In this post we will learn about the basic syntax of R. The syntax basically refers to the grammatical rules you must adhere to when communicating with your computer in the language R: if you do not follow the right syntax, i.e. you ‘speak’ grammatically incorrect, your computer will not understand you and communicate this to you by throwing up an error message.\nTo learn about these important basics, the post follows the following structure:"
+  },
+  {
+    "objectID": "content/tutorials/first-steps/index.html#footnotes",
+    "href": "content/tutorials/first-steps/index.html#footnotes",
+    "title": "First steps in R",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you do not know what the console is, you should have a look at the lecture slides from the Material section again.↩︎\nYou may try this out by typing 1:100 into your console and see what happens: this returns a vector of length 100, which certainly will contain some line breaks.↩︎\nAgain, the use of scripts has been explained in the lecture, so have a look at the slides (or the R-Studio cheat sheet) in the Material section.↩︎\nIn theory we can use &lt;- also the other way around: 2 + 3 -&gt; intermediate_result. At first sight this is more intuitive and respects the sequence of events: first, the result of 2 + 3 gets created, i.e. a new object gets defined. Then, this object gets the name intermediate_result. However, the code that results from such practice is usually much more difficult to read, so it is common practice to use &lt;- rather than -&gt;.↩︎\nWickham and Bryan (2022) provide an excellent introduction to the development of R packages↩︎\nPackages not released on this platform can also be installed directly from the repository they were published, e.g. Github. To this end, the package remotes must be installed first, then you can use functions such as install_github(). A short manual is provided here.↩︎"
+  },
+  {
+    "objectID": "content/statrecap/ConceptualFoundations/index.html",
+    "href": "content/statrecap/ConceptualFoundations/index.html",
+    "title": "1: What is Statistics all about? Conceptual Foundations",
+    "section": "",
+    "text": "Packages used for R examples\nlibrary(kableExtra)\n\n\n\nIntroduction\nThe intro to a blog based page…\n\n\nNext steps\n\nBack to the recap overview"
+  },
+  {
+    "objectID": "content/material/session00.html",
+    "href": "content/material/session00.html",
+    "title": "🗓️ Session 2: First steps in R",
+    "section": "",
+    "text": "Abstract"
+  },
+  {
+    "objectID": "content/material/session00.html#lecture-slides",
+    "href": "content/material/session00.html#lecture-slides",
+    "title": "🗓️ Session 2: First steps in R",
+    "section": "👨‍🏫 Lecture Slides",
+    "text": "👨‍🏫 Lecture Slides\nEither click on the slide area below or click here to download the slides.\n\n  \n\n\n\n\n\n\n\nThe R script of this session"
+  },
+  {
+    "objectID": "content/material/session00.html#accompanying-lecture-videos",
+    "href": "content/material/session00.html#accompanying-lecture-videos",
+    "title": "🗓️ Session 2: First steps in R",
+    "section": "🎥 Accompanying lecture videos",
+    "text": "🎥 Accompanying lecture videos\nAll the videos are available via this playlist."
+  },
+  {
+    "objectID": "content/material/session00.html#mandatory-reading",
+    "href": "content/material/session00.html#mandatory-reading",
+    "title": "🗓️ Session 2: First steps in R",
+    "section": "📚 Mandatory Reading",
+    "text": "📚 Mandatory Reading\n\nChapter 2 in Wickham et al. (2023).\n\n\n🏆 Further readings\n\nChapter 4 in Wickham et al. (2023)."
+  },
+  {
+    "objectID": "content/material/session00.html#coursework",
+    "href": "content/material/session00.html#coursework",
+    "title": "🗓️ Session 2: First steps in R",
+    "section": "✍️ Coursework",
+    "text": "✍️ Coursework\n\nDo this\n\n\n\n\n\n\n\nQuick code for starting the exercises\n\n\n\n\n\n\nlearnr::run_tutorial(\n  name = \"Basics\", \n  package = \"DataScienceExercises\", \n  shiny_args=list(\"launch.browser\"=TRUE))\n\n\n\n\n\nIf you have questions or problems, please post them in the Moodle forum"
+  },
+  {
+    "objectID": "content/material/SeminarDescription.html",
+    "href": "content/material/SeminarDescription.html",
+    "title": "Applied Data Science",
+    "section": "",
+    "text": "You will master practical data science skills using the open source programming language R. You will learn to collect, analyze, and visualize data to support managerial decision-making. Moreover, you will develop competencies in statistical modeling, machine learning, and reproducible reporting that are essential for evidence-based management practices.",
+    "crumbs": [
+      "🗓️ Material",
+      "Seminar Description"
+    ]
+  },
+  {
+    "objectID": "content/material/SeminarDescription.html#prerequisites",
+    "href": "content/material/SeminarDescription.html#prerequisites",
+    "title": "Applied Data Science",
+    "section": "3.1 Prerequisites",
+    "text": "3.1 Prerequisites\nThis seminar is designed for management students in the 3rd or 5th semester. Students must have completed basic statistics courses (Statistik I & II). Moreover, while not being required, it is helpful if you feel comfortable with the fundamental mathematics for business studies and come with basic computer literacy. Previous knowledge in programming is not required, except the content covered in Statistik I and II.\nFinally, for this course it is important that you bring your own laptop on which you can install and run R.",
+    "crumbs": [
+      "🗓️ Material",
+      "Seminar Description"
+    ]
+  },
+  {
+    "objectID": "content/material/SeminarDescription.html#course-details",
+    "href": "content/material/SeminarDescription.html#course-details",
+    "title": "Applied Data Science",
+    "section": "3.2 Course Details",
+    "text": "3.2 Course Details\n\nCredits: 5 CP (150 total hours)\nContact Time: 24.75 hours (11 × 2.25 hours)\nSelf-Study: 125.25 hours\nLocation: MAD, room 024\nFormat: Interactive seminar combining input lectures, interactive elements, and regular hands-on work in class",
+    "crumbs": [
+      "🗓️ Material",
+      "Seminar Description"
+    ]
+  },
+  {
+    "objectID": "content/material/SeminarDescription.html#course-resources",
+    "href": "content/material/SeminarDescription.html#course-resources",
+    "title": "Applied Data Science",
+    "section": "3.3 Course Resources",
+    "text": "3.3 Course Resources\n\nMoodle Room: 16255\nMoodle Password: DataSci25\nRequired Software: R (free), RStudio (free), Quarto (free)\nRecommended Textbooks:\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd edition). O’Reilly. https://r4ds.hadley.nz/\nIsmay, C., & Kim, A. Y.-S. (2020). Statistical inference via data science: A ModernDive, into R and the tidyverse. CRC Press, Taylor and Francis Group. https://moderndive.com/index.html\nWickham, H. (2019). Advanced R (Second edition). CRC Press/Taylor & Francis Group. https://adv-r.hadley.nz/\nJames, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). An introduction to statistical learning: With applications in R (Second edition). Springer. https://www.statlearning.com/",
+    "crumbs": [
+      "🗓️ Material",
+      "Seminar Description"
+    ]
+  },
+  {
+    "objectID": "content/material/SeminarDescription.html#recommended-study-schedule",
+    "href": "content/material/SeminarDescription.html#recommended-study-schedule",
+    "title": "Applied Data Science",
+    "section": "3.4 Recommended Study Schedule",
+    "text": "3.4 Recommended Study Schedule\n\nTime Horizon: September 15 - December 15 (13 weeks)\nTotal Commitment: 150 hours (11.5 hours per week average)\nSelf-Study: 125.25 hours (9.6 hours per week average)\nExemplary Daily Schedule:\n\n7 days/week: 1.4 hours of self-study per day on average\n5 days/week: 1.9 hours of self-study per day on average",
+    "crumbs": [
+      "🗓️ Material",
+      "Seminar Description"
+    ]
+  },
+  {
+    "objectID": "content/material/SeminarDescription.html#session-format",
+    "href": "content/material/SeminarDescription.html#session-format",
+    "title": "Applied Data Science",
+    "section": "4.1 Session Format",
+    "text": "4.1 Session Format\nEach session includes:\n\nInput Lecture: Core concepts and theory\nInteractive Elements: Discussions and Q&A\nHands-on Practice: Guided exercises in R/RStudio\nGroup Work: Collaborative problem-solving, followed by a joint reflection in class",
+    "crumbs": [
+      "🗓️ Material",
+      "Seminar Description"
+    ]
+  },
+  {
+    "objectID": "content/material/SeminarDescription.html#assessment-schedule",
+    "href": "content/material/SeminarDescription.html#assessment-schedule",
+    "title": "Applied Data Science",
+    "section": "4.2 Assessment Schedule",
+    "text": "4.2 Assessment Schedule\n\nMidterm Term Paper: Pass/fail requirement\n\nTo be admitted to the final exam, students must pass the midterm term paper.\n\nFinal Exam: 120-minute open book exam\n\nExam will be completed on students’ own laptops\nCollaboration and paid tools not allowed\nAll course materials and free resources permitted",
+    "crumbs": [
+      "🗓️ Material",
+      "Seminar Description"
+    ]
+  },
+  {
+    "objectID": "content/material/SeminarDescription.html#technical-requirements",
+    "href": "content/material/SeminarDescription.html#technical-requirements",
+    "title": "Applied Data Science",
+    "section": "4.3 Technical Requirements",
+    "text": "4.3 Technical Requirements\n\nSoftware: R (≥4.3.0), RStudio (≥2023.06), Quarto (≥1.3)\nHardware: Laptop capable of running statistical software (required for exam)\nData: Real business datasets provided throughout course\nSupport: Technical help sessions available by appointment\n\n\n\n\n\n\n\n\nContact Information\n\n\n\nFor questions regarding course content or logistics, please use the Moodle discussion forums or make an appointment during my office hours.",
+    "crumbs": [
+      "🗓️ Material",
+      "Seminar Description"
+    ]
+  },
+  {
+    "objectID": "content/statrecap.html",
+    "href": "content/statrecap.html",
+    "title": "A short and friendly recap of mathematical and statistical fundamentals",
+    "section": "",
+    "text": "Here I provide you with explanations of the basics in statistics and mathematics that are required for this course, as explicated in the seminar description.\nThis is ongoing work, so I greatly value your feedback and your suggestions on how to make this material more comprehensive and accessible.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\n1: What is Statistics all about? Conceptual Foundations\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "💻 Statistics recap"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Applied Data Science",
+    "section": "",
+    "text": "You will master practical data science skills using the open source programming language R. You will learn to collect, analyze, and visualize data to support managerial decision-making. Moreover, you will develop competencies in statistical modeling, machine learning, and reproducible reporting that are essential for evidence-based management practices.\n\n\n\nThe course consists of eleven sessions and accompanying self-study material, such as an app for coding exercises, tutorials and learning videos.\nEach of the on-site sessions includes the following elements:\n\nInput Lecture: Core concepts and theory\nInteractive Elements: Discussions and Q&A\nHands-on Practice: Guided exercises in R/RStudio\nGroup Work: Collaborative problem-solving, followed by a joint reflection in class\n\n\n\n\nThis seminar is designed for management students in the 3rd or 5th semester. Students must have completed basic statistics courses (Statistik I & II). Moreover, while not being required, it is helpful if you feel comfortable with the fundamental mathematics for business studies and come with basic computer literacy. Previous knowledge in programming is not required, except the content covered in Statistik I and II.\nFinally, for this course it is important that you bring your own laptop on which you can install and run R.",
+    "crumbs": [
+      "🏠 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#focus",
+    "href": "index.html#focus",
+    "title": "Applied Data Science",
+    "section": "",
+    "text": "You will master practical data science skills using the open source programming language R. You will learn to collect, analyze, and visualize data to support managerial decision-making. Moreover, you will develop competencies in statistical modeling, machine learning, and reproducible reporting that are essential for evidence-based management practices.",
+    "crumbs": [
+      "🏠 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#how",
+    "href": "index.html#how",
+    "title": "Applied Data Science",
+    "section": "",
+    "text": "The course consists of eleven sessions and accompanying self-study material, such as an app for coding exercises, tutorials and learning videos.\nEach of the on-site sessions includes the following elements:\n\nInput Lecture: Core concepts and theory\nInteractive Elements: Discussions and Q&A\nHands-on Practice: Guided exercises in R/RStudio\nGroup Work: Collaborative problem-solving, followed by a joint reflection in class",
+    "crumbs": [
+      "🏠 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Applied Data Science",
+    "section": "",
+    "text": "This seminar is designed for management students in the 3rd or 5th semester. Students must have completed basic statistics courses (Statistik I & II). Moreover, while not being required, it is helpful if you feel comfortable with the fundamental mathematics for business studies and come with basic computer literacy. Previous knowledge in programming is not required, except the content covered in Statistik I and II.\nFinally, for this course it is important that you bring your own laptop on which you can install and run R.",
+    "crumbs": [
+      "🏠 Home"
+    ]
+  },
+  {
+    "objectID": "content/index.html",
+    "href": "content/index.html",
+    "title": "Applied Data Science",
+    "section": "",
+    "text": "📍 Lecture\n\nMondays 09:00-12:00 in MAD (room 225)\n\nPlease make sure to check out the most recent version of the seminar timetable since lecture dates might differ from one week to another. The most recent version can be found here.\n\n\n💻 Exercises\nAre there exercises?\n\n\n📂 Material\nYou find an overview about all lecture materials, such as slides and reading lists here.\n\n\n📖 Tutorials\nComplementary to the lectures there are also short tutorials.\n\n\n💌 Contact and discussion\nFor asking questions and starting discussions, please use the forum in Moodle.",
+    "crumbs": [
+      "🏢 Getting Started"
+    ]
+  },
+  {
+    "objectID": "content/tutorials.html",
+    "href": "content/tutorials.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Here are tutorials, meant to complement the course.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Session date - Oldest\n      \n      \n        Session date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nSession date\n\n\n\nTitle\n\n\n\n\n\n\n\n\nSeptember 15, 2025\n\n\nFirst steps in R\n\n\n\n\n\n\nSeptember 15, 2025\n\n\nInstallation of the necessary software\n\n\n\n\n\n\nSeptember 15, 2025\n\n\nInstalling R packages\n\n\n\n\n\n\nSeptember 15, 2025\n\n\nUsing the exercise package\n\n\n\n\n\n\n \n\n\nTutorials\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "💻 Tutorials"
+    ]
+  },
+  {
+    "objectID": "content/material/index.html",
+    "href": "content/material/index.html",
+    "title": "Material overview",
+    "section": "",
+    "text": "The following textbooks offer a good general reference to the course content, and I think its a good idea to read into these books in a general way. Moreover, I often point to chapters in the respective session pages.\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd edition). O’Reilly. https://r4ds.hadley.nz/\nIsmay, C., & Kim, A. Y.-S. (2020). Statistical inference via data science: A ModernDive, into R and the tidyverse. CRC Press, Taylor and Francis Group. https://moderndive.com/index.html\n\nFor more advanced details on the fundamentals of programming in R, I recommend the following:\n\nWickham, H. (2019). Advanced R (Second edition). CRC Press/Taylor & Francis Group. https://adv-r.hadley.nz/\n\nFor the model-related parts of the lecture I recommend the following book as a further reading reference:\n\nJames, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). An introduction to statistical learning: With applications in R (Second edition). Springer. https://www.statlearning.com/\n\n\n\n\n\n\n\nStatistics recap\n\n\n\n\n\nIf you want to recap fundamtentals in statistics, check out these tutorials.",
+    "crumbs": [
+      "🗓️ Material",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "content/material/index.html#general-references",
+    "href": "content/material/index.html#general-references",
+    "title": "Material overview",
+    "section": "",
+    "text": "The following textbooks offer a good general reference to the course content, and I think its a good idea to read into these books in a general way. Moreover, I often point to chapters in the respective session pages.\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd edition). O’Reilly. https://r4ds.hadley.nz/\nIsmay, C., & Kim, A. Y.-S. (2020). Statistical inference via data science: A ModernDive, into R and the tidyverse. CRC Press, Taylor and Francis Group. https://moderndive.com/index.html\n\nFor more advanced details on the fundamentals of programming in R, I recommend the following:\n\nWickham, H. (2019). Advanced R (Second edition). CRC Press/Taylor & Francis Group. https://adv-r.hadley.nz/\n\nFor the model-related parts of the lecture I recommend the following book as a further reading reference:\n\nJames, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). An introduction to statistical learning: With applications in R (Second edition). Springer. https://www.statlearning.com/\n\n\n\n\n\n\n\nStatistics recap\n\n\n\n\n\nIf you want to recap fundamtentals in statistics, check out these tutorials.",
+    "crumbs": [
+      "🗓️ Material",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "content/material/index.html#session-specific-material",
+    "href": "content/material/index.html#session-specific-material",
+    "title": "Material overview",
+    "section": "🔖 Session-specific material",
+    "text": "🔖 Session-specific material\n\n\n\nSession\nTopic\nExercise code\n\n\n\n\n1\nIntroduction and installation\nBasics",
+    "crumbs": [
+      "🗓️ Material",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "content/material/session01.html",
+    "href": "content/material/session01.html",
+    "title": "🗓️ Session 01 - Introduction, overview and installation",
+    "section": "",
+    "text": "In this first week, we will cover what you can expect to learn from these exercises and how they differ from the main lecture. I will elaborate a bit on why I chose R for this course, what you can do with it, and what has helped previous participants helped excelling in similar courses. I also explain a bit what R is, how it relates to R Studio and LaTeX.",
+    "crumbs": [
+      "🗓️ Material",
+      "Session 01"
+    ]
+  },
+  {
+    "objectID": "content/material/session01.html#lecture-slides",
+    "href": "content/material/session01.html#lecture-slides",
+    "title": "🗓️ Session 01 - Introduction, overview and installation",
+    "section": "👨‍🏫 Lecture Slides",
+    "text": "👨‍🏫 Lecture Slides\nEither click on the slide area below or click here to download the slides.",
+    "crumbs": [
+      "🗓️ Material",
+      "Session 01"
+    ]
+  },
+  {
+    "objectID": "content/material/session01.html#accompanying-lecture-videos",
+    "href": "content/material/session01.html#accompanying-lecture-videos",
+    "title": "🗓️ Session 01 - Introduction, overview and installation",
+    "section": "🎥 Accompanying lecture videos",
+    "text": "🎥 Accompanying lecture videos\nAll the videos are available via this playlist.",
+    "crumbs": [
+      "🗓️ Material",
+      "Session 01"
+    ]
+  },
+  {
+    "objectID": "content/material/session01.html#mandatory-reading",
+    "href": "content/material/session01.html#mandatory-reading",
+    "title": "🗓️ Session 01 - Introduction, overview and installation",
+    "section": "📚 Mandatory Reading",
+    "text": "📚 Mandatory Reading\nRead the following tutorials:\n\nInstallation of the necessary software\nInstalling R packages\nUsing the exercise package",
+    "crumbs": [
+      "🗓️ Material",
+      "Session 01"
+    ]
+  },
+  {
+    "objectID": "content/material/session01.html#coursework",
+    "href": "content/material/session01.html#coursework",
+    "title": "🗓️ Session 01 - Introduction, overview and installation",
+    "section": "✍️ Coursework",
+    "text": "✍️ Coursework\n\nMake sure you installed R, R-Studio, Git and all the required R packages\nIf you have questions or problems, please post them in the Moodle forum",
+    "crumbs": [
+      "🗓️ Material",
+      "Session 01"
+    ]
+  },
+  {
+    "objectID": "content/tutorials/tutorials.html",
+    "href": "content/tutorials/tutorials.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Here are tutorials, meant to complement the course.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\nSession date\nTitle\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html",
+    "href": "content/tutorials/installation/index.html",
+    "title": "Installation of the necessary software",
+    "section": "",
+    "text": "During this course we will use the following software and services:\n\nR\nR-Studio\nGit\nGithub\nNetlify\n\nYou will need to install the software and register for these services on your own. While I offer an optional session for joint troubleshooting, it is absolutely necessary that you do your best to install the software on your own before that date. To this end, this document is meant to provide you with all the information needed. If you have questions, please use the Moodle forum. It is very unlikely that you are the only person having a particular problem. Maybe others can already help you out, and if not, all should benefit from the solution we find for your problem together.\nPlease also note that there is a separate tutorial on how to install the packages (a.k.a. R extensions) that we are going to use over the semester. Its best to continue with this tutorial on installing the required R packages directly after you have complete this one."
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html#install-r",
+    "href": "content/tutorials/installation/index.html#install-r",
+    "title": "Installation of the necessary software",
+    "section": "Install R",
+    "text": "Install R\nThe installation of R is very similar across operating systems (OS). The easiest way is to visit the R Homepage and to download the most recent version for your OS. In case you are using Mac OS and want to use Homebrew, its best to use this formula.\nImportant for Mac user: There are different versions of R for Intel chips, and Apple chips (M1, M2, etc.). It is very important that you install the correct version. If you are not sure whether your Mac contains a chip from Intel or Apple, click on the Apple symbol in the upper left of the screen, then click on About this Mac and you can see which processor your Mac is using in the new window. If you have an Apple chip, always install R for the so called arm64 architecture. Intel chip users must use the x86_64 architecture instead.\n\nOnly Windows: Install RTools\nIf you are using Windows, it is necessary to install RTools, which is required if you want to use packages written by others that are not officially released. To do so, simply visit the following website, download the installer, and install the software:\nWhen asked during the installation process, do not select the box for Add rtools to system PATH, but do select the box for Save version information to registry.\n\n\nOnly Mac: Command Line Developer Tools\nThe Command Line Developer Tools could be thought of as the Mac pendant to RTools. These allow you to build R packages from source (meaning, basically, you can use packages that are in early stages of distribution, or packages that are not released on the official R servers).\nThe easiest way to install them is to open the App Terminal, and then to type\nxcode-select --install\nand press Enter. Then a pop up window will open and allow you to install the software."
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html#update-r",
+    "href": "content/tutorials/installation/index.html#update-r",
+    "title": "Installation of the necessary software",
+    "section": "Update R",
+    "text": "Update R\nIn case R is already installed on your computer you should make sure that your version is more of less up to date. For our seminar you should use at least R version R 4.4.2. The version you are currently using is shown as soon as you start R.\nPlease note: if you installed R anew in the previous step, you do not need to update it. The information on updating R is mainly relevant for people who have installed R already some time ago.\n\nMacOS users\nFor MacOS users, the easiest route to update R is to just re-install the most current version from the R Homepage. Keep in mind that in this case you might need to re-install all previously installed packages. If you have a lot of packages installed that you want to keep, the following steps facilitates the re-installation process. First, save a list with all the packages you installed yourself. To this end type the following into the R console:1\npackage_overview &lt;- installed.packages()\npackage_names &lt;- as.vector(\n  package_overview[is.na(package_overview[,\"Priority\"]), 1])\nsave(package_names, file=\"r_packages.rda\")\nAfter re-installing R, you then need to load the file you previously saved and identify the missing packages. You can use the following code to do so if you are in the working directory in which you saved the file \"r_packages.rda\":\nload(\"r_packages.rda\")\npackages_new &lt;- installed.packages()\npackages_new_ &lt;- as.vector(packages_new[is.na(packages_new[,\"Priority\"]), 1])\nmissing_packages &lt;- setdiff(package_names, packages_new_)\ninstall.packages(missing_packages)\nupdate.packages()\n\n\nWindows users\nWindows users have a slightly more convenient route available to them: the installr package. It does not require you to re-install your packages. Just type the following code into your R console:2\ninstall.packages(\"installr\")\nlibrary(installr)\nupdateR(TRUE)\nFor more information see the package website.\n\n\nLinux users\nLinux users simply install R via their package manager. A quick search on Google should provide you with the information that are relevant for your particular Linux distribution. Updating is usually straightforward as well: just run the respective command from your package manager."
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html#r-studio",
+    "href": "content/tutorials/installation/index.html#r-studio",
+    "title": "Installation of the necessary software",
+    "section": "R-Studio",
+    "text": "R-Studio\nInstalling R-Studio is easy. The only thing you should keep in mind that you should install R first, and R-Studio second. So, after installing R got to the R-Studio download page and download the RStudio Desktop version for your OS according to the installation instructions provided.\nIf you are on Mac and you are using Homebrew you may use this formula.\nIf you want to update R-Studio, you just install it again. Please note that the minimal version for this seminar should be RStudio 2023.12.1+402, which is from late January 2024. You can check your version by clicking on RStudio in the upper left part of your screen when R-Studio is open. Then click on About RStudio."
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html#git",
+    "href": "content/tutorials/installation/index.html#git",
+    "title": "Installation of the necessary software",
+    "section": "Git",
+    "text": "Git\nInstalling Git is straightforward, but the right approach depends on your OS.\n\nMacOS\nOn MacOS you should install Git as part of the Command Line Developer Tools, which themselves are part of XCode (see above). Its easiest to run the following command from your Terminal:3\ngit --version\nIf you get an output such as git version 2.34.1 you already installed you need. If not, you will be asked to install the respective software packages (see above).\n\n\nWindows\nOn Windows you download Git for Windows from the official Webpage, which also provides you with all the relevant instructions.\n\n\nLinux\nOn Linux use you package manager. In most cases the name of the relevant package is git-all, so on Ubuntu, for instance, you would install Git via sudo apt install git-all."
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html#install-quarto",
+    "href": "content/tutorials/installation/index.html#install-quarto",
+    "title": "Installation of the necessary software",
+    "section": "Install Quarto",
+    "text": "Install Quarto\nQuarto allows you to write text and R code within one document. This is very useful in many instances, and allows you to create a wide variety of nicely looking and practically appealing outputs, including apps, websites, statistical reports, and much more. To install Quarto just follow the instructions from this webpage."
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html#github",
+    "href": "content/tutorials/installation/index.html#github",
+    "title": "Installation of the necessary software",
+    "section": "Github",
+    "text": "Github\nThis is easy. Just visit https://github.com/ and sign up using your email account."
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html#netlify",
+    "href": "content/tutorials/installation/index.html#netlify",
+    "title": "Installation of the necessary software",
+    "section": "Netlify",
+    "text": "Netlify\nThis is easy as well. Visit https://www.netlify.com/ and click on Sign up in the upper right of the webpage. You can now either create a Netlify account by clicking on Email and register a new email address, or you can link Netlify to one of the other accounts you might already have. I personally, for instance, linked Netlify to my Github account."
+  },
+  {
+    "objectID": "content/tutorials/installation/index.html#footnotes",
+    "href": "content/tutorials/installation/index.html#footnotes",
+    "title": "Installation of the necessary software",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you do not yet know what the R console is don’t worry. You will learn this during the course. But for now it would then be better to update R by just re-installing it.↩︎\nIf you do not yet know what the R console is don’t worry. You will learn this during the course. But for now it would then be better to update R by just re-installing it.↩︎\nBy this I mean that you first open the app Terminal and then enter the commend into the window that has opened, and then press Enter.↩︎"
+  },
+  {
+    "objectID": "content/tutorials/installing-packages/test_pdf.html",
+    "href": "content/tutorials/installing-packages/test_pdf.html",
+    "title": "A test document",
+    "section": "",
+    "text": "File used to test your Quarto installation\nPlease compile this document into PDF to test whether you have installed Quarto and LaTeX correctly.\nIf no PDF file is created, please make a screenshot of the error message and post it into the forum. If a file test.log has been created, please also post this file alongside the screenshot."
+  }
+]

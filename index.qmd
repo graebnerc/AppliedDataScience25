@@ -1,31 +1,60 @@
 ---
-title: "Title"
-subtitle: "Subtitle"
+title: "Applied Data Science"
+subtitle: "B.A. International Management - Fall Semester 2025/26"
 ---
 
 # 📑 The course in brief
 
-**Focus:** 
+## Focus 
 
-...
+You will master practical data science skills using the open source programming language R. You will learn to collect, analyze, and visualize data to support managerial decision-making. Moreover, you will develop competencies in statistical modeling, machine learning, and reproducible reporting that are essential for evidence-based management practices.
 
-**How:** 
 
-...
+## How
 
-**Prerequisites:**
+The course consists of eleven sessions and accompanying self-study material,
+such as an app for coding exercises, tutorials and learning videos.
 
-...
+Each of the on-site sessions includes the following elements:
+
+- **Input Lecture**: Core concepts and theory
+- **Interactive Elements**: Discussions and Q&A
+- **Hands-on Practice**: Guided exercises in R/RStudio
+- **Group Work**: Collaborative problem-solving, followed by a joint reflection in class
+
+## Prerequisites
+
+This seminar is designed for management students in the 3rd or 5th semester. Students must have completed basic statistics courses (Statistik I & II). Moreover, while not being required, it is helpful if you feel comfortable with the fundamental mathematics for business studies and come with basic computer literacy. Previous knowledge in programming is not required, except the content covered in *Statistik I* and *II*.
+
+Finally, for this course it is important that you bring your own laptop on which you can install and run R.
 
 # 🎯 Learning Objectives
 
--	...
+**Technical Expertise:**
+
+- Program effectively in R for data manipulation, analysis, and visualization
+- Create professional reports and presentations using Quarto for reproducible research
+- Apply statistical methods and machine learning techniques to business datasets
+- Import, clean, and prepare real-world business data for analysis
+- Develop predictive models for business forecasting and decision support
+
+**Methodological Competence:**
+
+- Design and conduct data-driven analyses to answer business questions
+- Select appropriate statistical methods and visualization techniques for different types of business problems
+- Interpret and communicate analytical results to non-technical stakeholders
+- Evaluate the quality and limitations of data and analytical approaches
+
+**Social and Personal Skills:**
+
+- Work collaboratively on data science projects
+- Present complex analytical findings clearly and transparently
+- Critically evaluate data-driven claims and recommendations in business contexts
 
 
 
 -----------------
 
-
-<a href=https://elearning.uni-flensburg.de/moodle/course/view.php?id=XXXXX>
-    <button class="button-61">The main course on moodle</button>
+<a href=https://elearning.uni-flensburg.de/moodle/course/view.php?id=16255>
+    <button class="button-61">The course on moodle</button>
 </a>
